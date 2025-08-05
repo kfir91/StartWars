@@ -1,0 +1,28 @@
+@use 'sass:color';
+
+$sw-yellow: #FFE81F;
+$sw-black: #000000;
+$sw-white: #FFFFFF;
+$sw-blue: #0066CC;
+$sw-red: #FF0000;
+$sw-gray-dark: #1a1a1a;
+$sw-gray-medium: #2a2a2a;
+$sw-gray-light: #404040;
+
+$font-family-main: 'Arial', 'Helvetica', sans-serif;
+$font-family-title: 'Arial Black', 'Helvetica', sans-serif;
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+$border-radius: 8px;
+
+$shadow-light: 0 2px 4px rgba(255, 232, 31, 0.1);
+$shadow-medium: 0 4px 8px rgba(255, 232, 31, 0.2);
+$shadow-heavy: 0 8px 16px rgba(255, 232, 31, 0.3);
+
+$transition-fast: 0.2s ease;
+$transition-medium: 0.3s ease;

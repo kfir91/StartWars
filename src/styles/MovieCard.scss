@@ -1,0 +1,130 @@
+@use 'variables' as *;
+
+.movie-card {
+  background: linear-gradient(145deg, $sw-gray-medium, $sw-gray-dark);
+  border: 2px solid transparent;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  box-shadow: $shadow-medium;
+  transition: all $transition-medium;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 232, 31, 0.1), transparent);
+    opacity: 0;
+    transition: opacity $transition-medium;
+    pointer-events: none;
+  }
+  
+  &:hover {
+    border-color: $sw-yellow;
+    box-shadow: $shadow-heavy;
+    transform: translateY(-5px);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.movie-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-md;
+  border-bottom: 1px solid rgba(255, 232, 31, 0.3);
+  padding-bottom: $spacing-md;
+}
+
+.movie-card__title {
+  font-family: $font-family-title;
+  font-size: 1.8rem;
+  color: $sw-yellow;
+  margin: 0;
+  flex: 1;
+  margin-right: $spacing-md;
+  text-shadow: 0 0 10px rgba(255, 232, 31, 0.5);
+}
+
+.movie-card__episode {
+  background: linear-gradient(45deg, $sw-yellow, #FFF200);
+  color: $sw-black;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.movie-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.movie-card__info-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  
+  strong {
+    color: $sw-yellow;
+    min-width: 120px;
+    margin-right: $spacing-sm;
+    font-weight: bold;
+  }
+  
+  &:last-child strong {
+    min-width: 120px;
+  }
+}
+
+.movie-card__opening-crawl {
+  h3 {
+    color: $sw-yellow;
+    font-size: 1.2rem;
+    margin-bottom: $spacing-sm;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  p {
+    color: $sw-white;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    text-align: justify;
+    opacity: 0.9;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: $spacing-xs;
+    
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 232, 31, 0.5);
+      border-radius: 2px;
+    }
+  }
+}
